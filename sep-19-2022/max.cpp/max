@@ -1,0 +1,32 @@
+#include <iostream>
+
+int main() {
+    int num1 = 5;
+    int num2 = 10;
+    int max;
+    if (num1 > num2) {
+        max = num1;
+    } else {
+        max = num2;
+    }
+
+}
+
+/*
+        push    rbp
+        mov     rbp, rsp
+        mov     DWORD PTR [rbp-4], 5
+        mov     DWORD PTR [rbp-8], 10
+        mov     eax, DWORD PTR [rbp-4]
+        cmp     eax, DWORD PTR [rbp-8]
+        jle     .L2
+        mov     eax, DWORD PTR [rbp-4]
+        mov     DWORD PTR [rbp-12], eax
+        jmp     .L3
+        mov     eax, DWORD PTR [rbp-8]
+        mov     DWORD PTR [rbp-12], eax
+       
+        mov     eax, 0
+        pop     rbp
+        
+*/
